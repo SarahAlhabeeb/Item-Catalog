@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<header class="masthead" style="background-image:url(&quot;/static/img/appleBG.png&quot;);">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2>Item Catalog</h2>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>CATEGORIES</th>
+                                    <th>ITEMS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+
+
+                                    <td>
+                                        {% for category in categories %}
+                                        <a href="{{url_for('showMenu', category_id = category.id)}}">
+                                            <p>{{category.title}}</p>
+                                        </a>
+                                        {% endfor %}
+                                    </td>
+
+                                    <ul>
+                                        {% with messages = get_flashed_messages() %}
+                                        {% if messages %}
+                                        {% for message in messages %}
+                                        <li> <strong> {{ message }} </strong> </li>
+                                        {% endfor %}
+                                    </ul>
+                                    {% endif %}
+                                    {% endwith %}
+
+
+                                    <td>
+                                        {% if items !=[] %}
+
+                                        <ul>
+                                            {% for i in items %}
+                                            <a href="{{url_for('showDescription', menu_id = i.id, category_id = category.id )}}">
+                                                <li>
+                                                    <p>{{i.title}}</p>
+                                                </li>
+                                            </a>
+
+                                            {% endfor %}
+
+                                        </ul>
+
+                                        <a class="btn btn-primary" role="button" style="background-color:transparent;color:rgb(255,255,255);"
+                                            href="{{url_for('newItem', category_id = category.id )}}">
+                                            Add new Item
+                                        </a>
+                                        {% else %}
+                                        <p> You currently have no menu items. <p>
+
+                                                {% endif %}
+
+
+
+                                    </td>
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}

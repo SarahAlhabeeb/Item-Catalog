@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<header class="masthead" style="background-image:url(&quot;../static/img/appleBG.png&quot;);">
+
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h1 class="brand-heading">Catalog</h1>
+                    <p class="intro-text">Item Catalog Project For the Udacity Full Stack Nanodegree&nbsp;</p><a class="btn btn-link btn-circle"
+                        role="button" href="{{ url_for('showCategories') }}"><i class="fa fa-check"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section id="about" class="content-section text-center" style="background-image:url(&quot;none&quot;);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+
+                {% for item in item %}
+                <h2><strong>&nbsp;{{item.title}}</strong></h2>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>{{item.description}}</th>
+                            </tr>
+                        </thead>
+
+                        
+                        <tbody>
+
+                           
+                            {% endfor %}
+                        </tbody>
+
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

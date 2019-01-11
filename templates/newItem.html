@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section id="about" class="content-section text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2>New item</h2>
+                <div class="table-responsive">
+                    <table class="table">
+                        <form action="{{url_for('newItem', category_id = category_id)}}" method='post'>
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th><input type="text" name="title" placeholder="Title of the item" style="background-color:transparent;color:rgb(255,255,255);width:260px;border-color:white;"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="font-weight:bold;">Description</td>
+                                    <td><input type="text" name="description" placeholder="Description of the item"
+                                            style="background-color:transparent;color:rgb(255,255,255);width:260px;border-color:white;/*border-radius:6%;*/"></td>
+                                </tr>
+
+                                <tr>
+                                    <td><button class="btn btn-primary" role="button" type="submit" style="background-color:transparent; color: #ffffff;">ADD</button></td>
+
+
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </form>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

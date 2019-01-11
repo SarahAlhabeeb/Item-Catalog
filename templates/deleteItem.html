@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section id="about" class="content-section text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2>Delete item</h2>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Are you sure you want to delete {{item.title}} ?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <form action="{{url_for('deleteItem', category_id = category.id, menu_id= item.id)}}"
+                                method='post'>
+                                <tr>
+                                    <td><button class="btn btn-primary" type="submit" style="color:rgb(255,255,255);background-color:transparent;margin:0px;">YES</button>
+                                        <a role="button" class="btn btn-primary" role="button" href="{{url_for('showDescription', menu_id = item.id, category_id = category.id )}}"
+                                            style="color:rgb(255,255,255);background-color:transparent;margin:0px;margin-left:5px;">No</a></td>
+                                </tr>
+                            </form>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
